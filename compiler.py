@@ -1,5 +1,5 @@
 #!/bin/python3
-
+import getpass
 def download(load,name):
 
     import os , json , requests as rq , re , time , subprocess as sp , sys
@@ -33,7 +33,7 @@ def download(load,name):
 
     sd = open(f"{name}.mp4","wb")
 
-    os.system(f"notify-send -a 'Zoechip Downloader' 'Started Downloading {name} {os.getcwd()}' -i '/home/electro/Documents/pyprograms/python/zoechip-downloader/chip.png'")
+    os.system(f"notify-send -a 'Zoechip Downloader' 'Started Downloading {name} {os.getcwd()}' -i f'/home/{getpass.getuser()}/Documents/pyprograms/python/zoechip-downloader/chip.png'")
 
     for i in range(len(links)):
         sd.close()
@@ -42,7 +42,7 @@ def download(load,name):
         sd.write(fall.content)
         sd.close()
 
-    os.system(f"notify-send  -u critical -a 'Zoechip Downloader' 'Done Downloading {name}' -i '/home/electro/Documents/pyprograms/python/zoechip-downloader/chip.png'")
+    os.system(f"notify-send  -u critical -a 'Zoechip Downloader' 'Done Downloading {name}' -i f'/home/{getpass.getuser()}/Documents/pyprograms/python/zoechip-downloader/chip.png'")
     sys.exit(0)
 
 def withprogress(load,name):
@@ -78,7 +78,7 @@ def withprogress(load,name):
 
     sd = open(f"{name}.mp4","wb")
         
-    os.system(f"notify-send -a 'Zoechip Downloader' 'Started Downloading {name} {os.getcwd()}' -i '/home/electro/Documents/pyprograms/python/zoechip-downloader/chip.png'")
+    os.system(f"notify-send -a 'Zoechip Downloader' 'Started Downloading {name} {os.getcwd()}' -i f'/home/{getpass.getuser()}/Documents/pyprograms/python/zoechip-downloader/chip.png'")
 
 
     for i in range(len(links)):
@@ -87,6 +87,6 @@ def withprogress(load,name):
         fall = os.system(f'curl -#  "{links[i]}" >> {name}.mp4')
         os.system("clear")
 
-    os.system(f"notify-send  -u critical -a 'Zoechip Downloader' 'Done Downloading {name}' -i '/home/electro/Documents/pyprograms/python/zoechip-downloader/chip.png'")
+    os.system(f"notify-send  -u critical -a 'Zoechip Downloader' 'Done Downloading {name}' -i f'/home/{getpass.getuser()}/Documents/pyprograms/python/zoechip-downloader/chip.png'")
     sys.exit(0)
         
