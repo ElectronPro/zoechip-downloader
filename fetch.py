@@ -7,7 +7,7 @@ import compiler
 import getpass
 from threading import Thread
 
-catch = ["720/index","1080/index"]
+catch = ["720/index","1080/index",".m3u8"]
 
 boom = ["watch-movie/"]
 
@@ -28,6 +28,8 @@ def do(thing,name):
          p = '720'
     if "1080" in thing:
          p = '1080'
+    else:
+         p = 'main'
 
     if os.path.exists(f"/home/{getpass.getuser()}/Videos/movie-files"):
             os.chdir(f"/home/{getpass.getuser()}/Videos/movie-files")
